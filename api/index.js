@@ -7,6 +7,7 @@ const { env } = require("process");
 const authRoute = require("./routes/auth")
 const userRoute = require("./routes/users")
 const postRoute = require("./routes/posts")
+const cateRoute = require("./routes/categories")
 
 
 dotenv.config();
@@ -17,6 +18,7 @@ mongoose.connect(process.env.MONGO_URL).then(console.log('Connect to MangoDB'));
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/post", postRoute);
+app.use("/api/category", cateRoute);
 
 app.listen("5000", () => {
     console.log("Backend is running.");
